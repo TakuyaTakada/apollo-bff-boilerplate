@@ -1,0 +1,27 @@
+scalar Date
+
+interface Node {
+    id: ID!
+}
+
+type PageInfo {
+    hasNextPage: Boolean!
+    hasPreviousPage: Boolean!
+    startCursor: String
+    endCursor: String
+}
+
+input PaginationInput {
+    first: Int
+    after: String
+    last: Int
+    before: String
+}
+
+type Query {
+    node(id: ID!): Node
+}
+
+type Mutation {
+    ping: Boolean!
+}
